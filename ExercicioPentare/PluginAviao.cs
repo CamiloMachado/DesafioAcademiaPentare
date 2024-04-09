@@ -4,6 +4,7 @@ using ExercicioPentare.Helpers;
 using System.Collections.Generic;
 using System.Linq;
 using ExercicioPentare.Domain;
+using System.Runtime.Remoting.Services;
 
 namespace ExercicioPentare
 {
@@ -18,7 +19,14 @@ namespace ExercicioPentare
             IOrganizationService adminService = serviceFactory.CreateOrganizationService(null);
             _tracingService = (ITracingService)serviceProvider.GetService(typeof(ITracingService));
 
-            if (CreatePostOperation(context, adminService) == false) { return; }
+            try
+            {
+                if (CreatePostOperation(context, adminService) == false) { return; }
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidPluginExecutionException($"Ocorreu um erro ao executar {this.GetType().FullName}: \n{ex.Message}\n\n  - {ex.StackTrace}");
+            }
         }
 
         private bool CreatePostOperation(IPluginExecutionContext context, IOrganizationService adminService)
@@ -41,9 +49,9 @@ namespace ExercicioPentare
                         embarque["academia_aviaoid"] = new EntityReference(target.LogicalName, target.Id);
                         adminService.Create(embarque);
                     }
-                    catch (InvalidPluginExecutionException ex)
+                    catch (InvalidPluginExecutionException er)
                     {
-                        throw new InvalidPluginExecutionException($"Erro ao criar embarque: {ex.Message}");
+                        throw new InvalidPluginExecutionException(er.Message);
                     }
                 }
             }
