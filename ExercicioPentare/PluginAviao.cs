@@ -37,14 +37,12 @@ namespace ExercicioPentare
 
                 List<Enumerador.Embarque.Assento> assentos = Enum.GetValues(typeof(Enumerador.Embarque.Assento)).OfType<Enumerador.Embarque.Assento>().ToList();
 
-                var portao = PortaoEmbarque.Portao();
-
                 foreach (var assento in assentos)
                 {
                     try
                     {
                         Entity embarque = new Entity("academia_embarque");
-                        embarque["academia_portao"] = new OptionSetValue(portao);
+                        embarque["academia_portao"] = new OptionSetValue(PortaoEmbarque.Portao());
                         embarque["academia_assento"] = new OptionSetValue(assento.GetHashCode());
                         embarque["academia_aviaoid"] = new EntityReference(target.LogicalName, target.Id);
                         adminService.Create(embarque);
