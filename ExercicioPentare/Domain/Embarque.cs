@@ -49,13 +49,13 @@ namespace ExercicioPentare.Domain
                 target.GetAttributeValue<OptionSetValue>("academia_assento") : preImage.GetAttributeValue<OptionSetValue>("academia_assento");
 
             var aviao = target.Contains("academia_aviaoid") ?
-                target.GetAttributeValue<OptionSetValue>("academia_aviaoid") : preImage.GetAttributeValue<OptionSetValue>("academia_aviaoid");
+                target.GetAttributeValue<EntityReference>("academia_aviaoid") : preImage.GetAttributeValue<EntityReference>("academia_aviaoid");
 
             if (aviao != null && assento != null)
             {
                 QueryExpression queryExpression = new QueryExpression("academia_embarque");
                 queryExpression.Criteria.AddCondition("academia_assento", ConditionOperator.Equal, assento.Value);
-                queryExpression.Criteria.AddCondition("academia_aviaoid", ConditionOperator.Equal, aviao.Value);
+                queryExpression.Criteria.AddCondition("academia_aviaoid", ConditionOperator.Equal, aviao.Id);
                 var embarques = _service.RetrieveMultiple(queryExpression);
 
                 if (embarques.Entities.Count > 0)

@@ -17,7 +17,7 @@ namespace ExercicioPentare
             _tracingService = (ITracingService)serviceProvider.GetService(typeof(ITracingService));
 
             if (CreatePreValidation(context, adminService) == false) { return; }
-            if (UpdatePostOperation(context, adminService) == false) { return; }
+            if (UpdatePreValidation(context, adminService) == false) { return; }
         }
 
         private bool CreatePreValidation(IPluginExecutionContext context, IOrganizationService adminService)
@@ -35,9 +35,9 @@ namespace ExercicioPentare
             return true;
         }
 
-        private bool UpdatePostOperation(IPluginExecutionContext context, IOrganizationService adminService)
+        private bool UpdatePreValidation(IPluginExecutionContext context, IOrganizationService adminService)
         {
-            if (PluginBase.Validate(context, PluginBase.MessageName.Update, PluginBase.Stage.PostOperation, PluginBase.Mode.Synchronous))
+            if (PluginBase.Validate(context, PluginBase.MessageName.Update, PluginBase.Stage.PreValidation, PluginBase.Mode.Synchronous))
             {
                 if (!context.InputParameters.Contains("Target") && !(context.InputParameters["Target"] is Entity)) { return false; }
                 if (!context.PreEntityImages.Contains("PreImage") && !(context.PreEntityImages["PreImage"] is Entity)) { return false; }
