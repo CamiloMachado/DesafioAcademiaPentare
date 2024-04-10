@@ -1,9 +1,4 @@
 ﻿using Microsoft.Xrm.Sdk;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ExercicioPentare.Helpers
 {
@@ -11,7 +6,8 @@ namespace ExercicioPentare.Helpers
     {
         public enum MessageName
         {
-            Create
+            Create,
+            Update
         }
 
         public enum Stage

@@ -89,10 +89,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\PortaoEmbarque.cs" />
-    <Compile Include="Helpers\Enumerador.cs" />
+    <Compile Include="Domain\Aviao.cs" />
+    <Compile Include="Domain\Embarque.cs" />
     <Compile Include="Helpers\PluginBase.cs" />
     <Compile Include="PluginAviao.cs" />
+    <Compile Include="PluginEmbarque.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
