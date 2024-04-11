@@ -7,13 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pentare.Plugin", "Exercicio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugin", "Plugin", "{D7C5A350-4ABA-49CA-BDEE-0061A2CD9DEA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebResource", "WebResource", "{57857BAA-BD72-4650-99AB-76E4538E08E0}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Javascript", "Javascript", "{55DC351B-684E-4F6A-9A29-575CF37890F3}"
-	ProjectSection(SolutionItems) = preProject
-		Script1.js = Script1.js
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,7 +23,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E11AA2E9-E5CC-4241-AA0A-7698348A18F4} = {D7C5A350-4ABA-49CA-BDEE-0061A2CD9DEA}
-		{55DC351B-684E-4F6A-9A29-575CF37890F3} = {57857BAA-BD72-4650-99AB-76E4538E08E0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E46D201C-B6B4-4E9B-9165-878F50DB16ED}

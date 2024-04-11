@@ -30,7 +30,6 @@ namespace ExercicioPentare
 
                 Embarque embarque = new Embarque(adminService);
                 embarque.ValidarCamposPreenchidos(target);
-                embarque.VerificarAssentoEsixtentePorAviao(target);
             }
             return true;
         }
@@ -48,7 +47,6 @@ namespace ExercicioPentare
                 Embarque embarque = new Embarque(adminService);
 
                 embarque.ValidarCamposPreenchidos(target, preImage);
-                embarque.VerificarAssentoEsixtentePorAviao(target, preImage);
             }
             return true;
         }

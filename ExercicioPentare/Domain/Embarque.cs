@@ -1,8 +1,5 @@
-﻿using ExercicioPentare.Helpers;
-using Microsoft.Xrm.Sdk;
-using Microsoft.Xrm.Sdk.Query;
+﻿using Microsoft.Xrm.Sdk;
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
 
 namespace ExercicioPentare.Domain
 {
@@ -39,28 +36,6 @@ namespace ExercicioPentare.Domain
                 if (camposObrigatoriosNaoPreenchidos.Count > 0)
                 {
                     throw new InvalidPluginExecutionException($"{string.Join(",", camposObrigatoriosNaoPreenchidos)} são obrigatórios!");
-                }
-            }
-        }
-
-        public void VerificarAssentoEsixtentePorAviao(Entity target, Entity preImage = null)
-        {
-            var assento = target.Contains("academia_assento") ?
-                target.GetAttributeValue<OptionSetValue>("academia_assento") : preImage.GetAttributeValue<OptionSetValue>("academia_assento");
-
-            var aviao = target.Contains("academia_aviaoid") ?
-                target.GetAttributeValue<EntityReference>("academia_aviaoid") : preImage.GetAttributeValue<EntityReference>("academia_aviaoid");
-
-            if (aviao != null && assento != null)
-            {
-                QueryExpression queryExpression = new QueryExpression("academia_embarque");
-                queryExpression.Criteria.AddCondition("academia_assento", ConditionOperator.Equal, assento.Value);
-                queryExpression.Criteria.AddCondition("academia_aviaoid", ConditionOperator.Equal, aviao.Id);
-                var embarques = _service.RetrieveMultiple(queryExpression);
-
-                if (embarques.Entities.Count > 0)
-                {
-                    throw new InvalidPluginExecutionException("Não deve existir um resgistro com assento e avião existentes!");
                 }
             }
         }

@@ -1,0 +1,14 @@
+{
+  "name": "pentare.web-resource",
+  "version": "0.0.0",
+  "description": "Pentare.WebResource",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  },
+  "devDependencies": {
+    "eslint": "^8.21.0"
+  },
+  "eslintConfig": {
+  }
+}
