@@ -69,8 +69,8 @@ Academia.Aviao = {
         eventArgs.disableAsyncTimeout();
 
         const confirmStrings = {
-            text: "Ao salvar registros de embarques ser„o criados, deseja continuar?",
-            title: "AtenÁ„o!",
+            text: "Ao salvar, registros de embarques ser√£o criados, deseja continuar?",
+            title: "Aten√ß√£o!",
             confirmButtonLabel: "Sim"
         };
         const confirmOptions = { height: 200, width: 450 };

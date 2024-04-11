@@ -11,7 +11,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>7d18cbbe-e682-46c1-9f60-614a676c2b43</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>JS\academia_aviao.js</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <StartWebBrowser>False</StartWebBrowser>
     <SearchPath>
     </SearchPath>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ExercicioPentare.Domain
 {
-    internal class Embarque
+    public class Embarque
     {
         private readonly IOrganizationService _service;
 

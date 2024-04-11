@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace ExercicioPentare.Domain
 {
-    internal class Aviao
+    public class Aviao
     {
         private readonly IOrganizationService _service;
 

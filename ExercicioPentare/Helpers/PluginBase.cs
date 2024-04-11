@@ -2,7 +2,7 @@
 
 namespace ExercicioPentare.Helpers
 {
-    internal class PluginBase
+    public static class PluginBase
     {
         public enum MessageName
         {
