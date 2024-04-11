@@ -8,6 +8,7 @@ Academia.Aviao = {
     },
 
     OnLoad: function (executionContext) {
+        'use-strict'
         const formContext = executionContext.getFormContext();
         formContext.data.entity.addOnPostSave(this.CriarEmbarqueAoGerarRegistroAviao);
     },
@@ -43,7 +44,7 @@ Academia.Aviao = {
         Xrm.WebApi.updateRecord("academia_aviao", aviaoId, data).then(
             function success(result) {
                 formContext.data.refresh(false);
-                console.log("Account updated");
+                console.log("Avião updated!");
             },
             function (error) {
                 console.log(error.message);
