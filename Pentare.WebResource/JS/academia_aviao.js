@@ -44,10 +44,8 @@ Academia.Aviao = {
         Xrm.WebApi.updateRecord("academia_aviao", aviaoId, data).then(
             function success(result) {
                 formContext.data.refresh(false);
-                console.log("Avião updated!");
             },
             function (error) {
-                console.log(error.message);
             }
         );
     },
